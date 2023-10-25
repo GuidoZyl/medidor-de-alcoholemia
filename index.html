@@ -68,19 +68,25 @@
         </div>
         <div class="divider"></div>
         <div class="input-label">
-          <label for="peso">Peso (kg)</label>
+          <label for="tiempo"
+            >Tiempo desde la consumisión en mins (opcional)</label
+          >
           <input
             type="number"
             step="any"
-            name="peso"
-            required
+            name="tiempo"
             class="val-consu"
+            id="val-tiempo"
             min="0"
           />
         </div>
         <div class="input-label">
+          <label for="peso">Peso (kg)</label>
+          <input type="number" step="any" name="peso" required min="0" />
+        </div>
+        <div class="input-label">
           <label for="genero">Sexo Biológico</label>
-          <select name="genero" id="val-genero" class="val-consu">
+          <select name="genero" id="val-genero">
             <option value="default">Seleccionar</option>
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
@@ -88,23 +94,12 @@
         </div>
         <div class="input-label">
           <label for="contexura">Tipo de cuerpo</label>
-          <select name="contextura" id="val-contextura" class="val-consu">
+          <select name="contextura" id="val-contextura">
             <option value="default">Seleccionar</option>
             <option value="astenico">Asténico</option>
             <option value="picnico">Pícnico</option>
             <option value="atletico">Atlético</option>
           </select>
-        </div>
-        <div class="input-label">
-          <label for="tiempo">Tiempo desde la consumisión (mins)</label>
-          <input
-            type="number"
-            step="any"
-            name="tiempo"
-            required
-            class="val-consu"
-            min="0"
-          />
         </div>
         <button type="submit">Calcular alcoholemia</button>
       </form>

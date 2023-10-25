@@ -109,13 +109,21 @@ const onSubmit = (event) => {
   inputs.forEach((input) => (input.value = ""));
   select.value = "default";
 
-alcoholLevel += calcAlcoholLevel(
+  const valueTiempo = (value) => {
+    if ((value === "") | " " | null) {
+      return 0;
+    } else {
+      return value;
+    }
+  };
+
+  alcoholLevel += calcAlcoholLevel(
     values.volumen,
     values.ga,
     values.peso,
     values.genero,
     values.contextura,
-    values.tiempo
+    valueTiempo(values.tiempo)
   );
   console.log(alcoholLevel);
 
@@ -133,7 +141,7 @@ alcoholLevel += calcAlcoholLevel(
 
   const heading = document.querySelector("#effects");
   const p = document.querySelector("#effects-description");
-  
+
   if (alcoholLevel > 0 && alcoholLevel < 1) {
     heading.textContent = `Efecto: ${efectos[0].nombre}`;
     p.textContent = efectos[0].descripcion;
